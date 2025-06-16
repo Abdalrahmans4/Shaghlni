@@ -1,4 +1,8 @@
 /* Reset */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +10,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background-color: #f4f4f4;
   color: #333;
 }
@@ -114,4 +118,32 @@ footer.footer {
 section {
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.freelancer-card {
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.freelancer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.freelancer-card .card-img-top {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.freelancer-card .card-body {
+  background-color: #f9f9f9;
+}
+
+.freelancer-card .card-footer {
+  background-color: #f1f1f1;
+  border-top: none;
+  text-align: center;
 }
