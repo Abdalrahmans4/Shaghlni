@@ -1,22 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import PopUp from "../components/Popup";
+import DevCards from '../components/DevCards';
 const Home = () => {
+   const [openPopup, setOpenPopup] = useState(false);
   return (
     <>
       {/* Hero Section */}
       <section className="bg-light py-5">
         <Container>
+          <PopUp openPopUp={openPopup} closePopUp={() => setOpenPopup(false)} />
+
           <Row className="align-items-center">
             <Col md={6}>
               <h1 className="mb-4">Showcase Your Development Projects</h1>
               <p className="lead">
-                Create, display, and share your web development projects in one elegant place.
+                Create, display, and share your web development projects in one
+                elegant place.
               </p>
-              <Button variant="primary" size="lg">Get Started</Button>
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={() => setOpenPopup(true)}
+              >
+                Get Started
+              </Button>
             </Col>
+
             <Col md={6}>
               <img
-                src={"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"}
+                src={
+                  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
+                }
                 alt="Hero"
                 className="img-fluid rounded"
               />
@@ -36,7 +51,6 @@ const Home = () => {
                 <Card.Body>
                   <Card.Title>Portfolio Website</Card.Title>
                   <Card.Text>A responsive personal portfolio made with React and Bootstrap.</Card.Text>
-                  <Button variant="outline-primary" href="#">View Project</Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -46,7 +60,6 @@ const Home = () => {
                 <Card.Body>
                   <Card.Title>Online Store</Card.Title>
                   <Card.Text>E-commerce front-end built with React Hooks and Firebase.</Card.Text>
-                  <Button variant="outline-primary" href="#">View Project</Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -56,13 +69,16 @@ const Home = () => {
                 <Card.Body>
                   <Card.Title>Blog Platform</Card.Title>
                   <Card.Text>Developer blog with Markdown, Node.js and MongoDB.</Card.Text>
-                  <Button variant="outline-primary" href="#">View Project</Button>
                 </Card.Body>
               </Card>
             </Col>
           </Row>
         </Container>
       </section>
+      <DevCards />
+
+
+      
     </>
   );
 };
