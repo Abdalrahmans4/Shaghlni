@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+
 const DevCards = () => {
 
     const [freelancers, setFreelancers] = useState([]);
@@ -24,7 +24,7 @@ const DevCards = () => {
             }
         } catch (err) {
             console.error("Error:", err);
-            alert("Error submitting form.");
+           
         }
     };
 
