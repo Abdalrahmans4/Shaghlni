@@ -1,28 +1,18 @@
 import React from 'react';
-import { Container, Navbar, Button } from 'react-bootstrap';
+import { Container, Navbar } from 'react-bootstrap';
 import logo from '../images/logo.png';
 
 const Header = () => {
   return (
-    <Navbar bg="dark" variant="dark" className="mb-4">
-      <Container className="d-flex justify-content-between">
-       <Navbar.Brand href="#">
-<img
-  src={logo}
-  alt="SHAGELNI Logo"
-  style={{ width: '120px', height: 'auto', borderRadius: '8px' }}
-/>
-
-
-
-
-
-
-</Navbar.Brand>
-        {/* <div>
-          <Button variant="outline-light" className="me-2">Login</Button>
-          <Button variant="primary">Sign Up</Button>
-        </div> */}
+    <Navbar bg="secondary" variant="dark" className="mb-4">
+      <Container className="flex justify-center items-center">
+        <Navbar.Brand href="#" className="flex justify-center items-center w-full">
+          <img
+            src={logo}
+            alt="SHAGELNI Logo"
+            className="w-32 h-auto rounded-lg" // w-32 = 128px, adjust as needed
+          />
+        </Navbar.Brand>
       </Container>
     </Navbar>
   );
